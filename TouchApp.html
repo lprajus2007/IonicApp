@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+  <!--<script src="http://code.angularjs.org/1.2.5/angular.js" data-semver="1.2.5" data-require="angular.js@1.2.5"></script>-->
+  <!--<script data-require="angular-touch@1.2.5" data-semver="1.2.5" src="http://code.angularjs.org/1.2.5/angular-touch.js"></script>-->
+  <link rel="stylesheet" href="style.css" />
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <title>Satya Sampathirao</title>
+</head>
+
+<!--<body id="mainBody" ng-controller="ClickCtrl" ng-click="clickHandler($event)">-->
+<body id="mainBody">
+  <canvas id="myCanvas">
+  </canvas> 
+  <p>
+  
+  </p>
+  
+  <script>
+    $(document).ready(function(e) {
+		var c = document.getElementById("myCanvas");
+		var context = c.getContext("2d");
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
+    $("#mainBody").click(function(e){
+		var x = e.pageX;
+		var y = e.pageY;
+		var b = $(window).height();
+		var a = $(window).width(); 
+  		var c = document.getElementById("myCanvas");
+		var context = c.getContext("2d");
+		//window.addEventListener('resize', resizeCanvas, false);
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		ctx.beginPath();
+		ctx.moveTo(10, b/2);
+		ctx.bezierCurveTo(x, b/2, x/2, y, x, y);
+		ctx.stroke();
+		
+		context.beginPath();
+	    context.arc(x, y, radius, 0, 2 * Math.PI, false);
+    	context.fillStyle = 'green';
+    	context.fill();
+    	context.lineWidth = 5;
+    	context.strokeStyle = '#003300';
+    	context.stroke();
+	  
+		context.beginPath();
+    	context.arc(10, b/2, radius, 0, 2 * Math.PI, false);
+    	context.fillStyle = 'green';
+    	context.fill();
+    	context.lineWidth = 5;
+    	context.strokeStyle = '#003300';
+    	context.stroke();
+	});
+});
+  </script>
+ 
+</body>
+ 
+</html>
